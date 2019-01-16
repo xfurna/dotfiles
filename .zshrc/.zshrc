@@ -67,6 +67,7 @@ plugins=(
   man
   zsh_reload
   battery
+  chucknorris
   git-auto-fetch
 )
 
@@ -111,6 +112,10 @@ zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
 
+function cdd {
+	cd && cd ../../hdd/
+}
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -139,3 +144,4 @@ bindkey "^[s" insert-sudo
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
