@@ -32,14 +32,14 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 for_window [class="^.*"] border pixel 0
-gaps inner 20
-gaps outer 20
-gaps horizontal 20
-gaps vertical 24
-gaps top 25
-gaps right 25
-gaps bottom 25
-gaps left 25
+gaps inner 15
+gaps outer 10 
+gaps horizontal 5
+gaps vertical 5
+gaps top 5
+gaps right 5
+gaps bottom 5
+gaps left 5
 
 
 # kill focused window
@@ -160,16 +160,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 9 px or 9 ppt
+        bindsym k resize grow height 9 px or 9 ppt
+        bindsym l resize shrink height 9 px or 9 ppt
+        bindsym semicolon resize grow width 9 px or 9 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 9 px or 9 ppt
+        bindsym Down resize grow height 9 px or 9 ppt
+        bindsym Up resize shrink height 9 px or 9 ppt
+        bindsym Right resize grow width 9 px or 9 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -217,6 +217,12 @@ bindsym $mod+Shift+z exec i3lock -c "#2f343f"
 
 smart_gaps on
 
+
+#transparency of the terminal
+bindsym $mod+Shift+F7 exec sh /home/evi1haxor/pkg/i3-gaps/shscript/transparency.sh -
+bindsym $mod+Shift+F8 exec sh /home/evi1haxor/pkg/i3-gaps/shscript/transparency.sh +
+
+
 #brightness
  
 bindsym $mod+F3 exec sh /home/evi1haxor/pkg/i3-gaps/shscript/brightness.sh +
@@ -238,9 +244,9 @@ exec_always compton -f
 
 #wallpaper
 
-#exec_always bash /home/evi1haxor/pkg/i3-gaps/shscript/wallp.sh models
+exec_always bash /home/evi1haxor/pkg/i3-gaps/shscript/wallp.sh models
 
-exec_always feh --bg-fill /hdd/Wallpapers/wp.png
+#exec_always feh --bg-fill /hdd/Wallpapers/wp.png
 exec_always xinput set-prop 12 308 1
 
 #Volume control
