@@ -125,6 +125,14 @@ function cdd {
 	cd && cd ../../hdd/
 }
 
+function cdenv {
+	if [ "$#" = 0 ]; then
+		cd && cd ../../hdd/projects/virtual_env/
+	else
+		cd && cd ../../hdd/projects/virtual_env/$1
+	fi
+}
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
