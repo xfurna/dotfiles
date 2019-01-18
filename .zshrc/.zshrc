@@ -111,6 +111,15 @@ insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
+#Alt+s = virtualenv
+
+virtual_env () {
+	zle beginning-of-line
+	zle -U "virtualenv "
+}
+zle -N virtual_env
+bindkey "^[v" virtual_env
+
 
 function cdd {
 	cd && cd ../../hdd/

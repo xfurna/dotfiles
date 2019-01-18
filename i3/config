@@ -232,6 +232,8 @@ bindsym $mod+F2 exec sh /home/evi1haxor/pkg/i3-gaps/shscript/brightness.sh -
 bindsym $mod+Shift+t exec telegram-desktop
 bindsym $mod+Shift+w exec firefox
 bindsym $mod+Shift+n exec nautilus 
+bindsym $mod+Shift+s exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
+bindsym $mod+c exec code 
 
 # execution on login
 
