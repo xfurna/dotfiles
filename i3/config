@@ -233,7 +233,8 @@ bindsym $mod+Shift+t exec telegram-desktop
 bindsym $mod+Shift+w exec firefox
 bindsym $mod+Shift+n exec nautilus 
 bindsym $mod+Shift+s exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
-bindsym $mod+c exec code 
+bindsym $mod+c exec code
+bindsym $mod+Shift+p poweroff
 
 # execution on login
 
