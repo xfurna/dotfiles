@@ -32,10 +32,10 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 for_window [class="^.*"] border pixel 0
-gaps inner 15
-gaps outer 10 
-gaps horizontal 5
-gaps vertical 5
+gaps inner 13
+gaps outer 13 
+gaps horizontal 55
+gaps vertical 55
 gaps top 5
 gaps right 5
 gaps bottom 5
@@ -187,7 +187,7 @@ set $urgent-bg-color         #E53935
 
 #window color          
 #                       #border                 #background         #text                #indicator
-client.focused          $bg-color               $bg-color           $text-color           #00ff00
+client.focused          $bg-color               $bg-color           $text-color           #4530c9
 client.unfocused        $inactive-bg-color      $inactive-bg-color  $inactive-text-color  #00ff00
 client.focused_inactive $inactive-bg-color      $inactive-bg-color  $inactive-text-color  #00ff00
 client.urgent           $urgent-bg-color        $urgent-bg-color    $text-color           #00ff00   
@@ -197,7 +197,7 @@ client.urgent           $urgent-bg-color        $urgent-bg-color    $text-color 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-       status_command i3blocks
+       status_command i3blocks 
        colors {
 		background $bg-color
 		separator #757575
@@ -207,6 +207,8 @@ bar {
 		urgent_workspace     $urgent-bg-color    $urgent-bg-color      $text-color
 	}
 }
+
+#exec_always --no-startup-id sh ~/.config/polybar/launch.sh
 
 #print screen
 bindsym $mod+Print exec scrot
@@ -234,11 +236,11 @@ bindsym $mod+Shift+w exec firefox
 bindsym $mod+Shift+n exec nautilus 
 bindsym $mod+Shift+s exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
 bindsym $mod+c exec code
-bindsym $mod+Shift+p poweroff
+#bindsym $mod+Shift+p 
 
 # execution on login
 
-assign [class="Firefox"] $ws2
+#assign [class="Firefox"] $ws2
 assign [class="TelegramDesktop"] $ws4
 assign [class="Nautilus"] $ws3
 #exec /home/evi1haxor/pkg/tsetup.1.5.4/Telegram/Telegram
@@ -249,7 +251,7 @@ exec_always compton -f
 
 exec_always bash /home/evi1haxor/pkg/i3-gaps/shscript/wallp.sh models
 
-#exec_always feh --bg-fill /hdd/Wallpapers/wp.png
+#exec_always feh --bg-fill /hdd/Wallpapers/wpp.png
 exec_always xinput set-prop 12 308 1
 
 #Volume control
