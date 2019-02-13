@@ -196,19 +196,20 @@ client.urgent           $urgent-bg-color        $urgent-bg-color    $text-color 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-       status_command i3blocks 
-       colors {
-		background $bg-color
-		separator #757575
-		#                    border              background            text
-		focused_workspace    $bg-color           $bg-color             $text-color  
-		inactive_workspace   $inactive-bg-color  $inactive-bg-color    $inactive-bg-color
-		urgent_workspace     $urgent-bg-color    $urgent-bg-color      $text-color
-	}
-}
+#bar {
+#       status_command i3blocks 
+#       colors {
+#		background $bg-color
+#		separator #757575
+#		#                    border              background            text
+#		focused_workspace    $bg-color           $bg-color             $text-color  
+#		inactive_workspace   $inactive-bg-color  $inactive-bg-color    $inactive-bg-color
+#		urgent_workspace     $urgent-bg-color    $urgent-bg-color      $text-color
+#	}
+#}
 
-#exec_always --no-startup-id sh ~/.config/polybar/launch.sh
+
+exec_always --no-startup-id sh ~/.config/polybar/launch.sh
 
 #print screen
 bindsym $mod+Print exec scrot
@@ -247,6 +248,13 @@ assign [class="Nautilus"] $ws3
 #exec firefox
 exec_always compton -f
 
+
+#typora
+
+bindsym $mod+n exec typora
+
+
+
 #wallpaper
 
 exec_always bash /home/evi1haxor/pkg/i3-gaps/shscript/wallp.sh models
@@ -262,7 +270,7 @@ bindsym $mod+F6 exec amixer -D pulse sset Master mute
 bindsym $mod+Shift+F6 exec amixer -D pulse sset Master unmute
 
 
-exec --no-startup-id "compton -b --config ~/.config/compton/compton.conf"
+exec --no-startup-id "compton -b --config ~/pkg/compton.conf"
 
 
 # Touchpad controls
