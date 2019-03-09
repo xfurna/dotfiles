@@ -257,8 +257,8 @@ bindsym $mod+n exec typora
 
 #wallpaper
 
+#exec_always bash /home/evi1haxor/pkg/i3-gaps/shscript/wallp.sh rndm
 exec_always bash /home/evi1haxor/pkg/i3-gaps/shscript/wallp.sh models
-
 #exec_always feh --bg-fill /hdd/Wallpapers/wpp.png
 exec_always xinput set-prop 12 308 1
 
