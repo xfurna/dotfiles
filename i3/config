@@ -251,7 +251,7 @@ exec_always compton -f
 
 #typora
 
-bindsym $mod+n exec typora
+bindsym $mod+n bash /home/evi1haxor/pkg/i3-gaps/shscript/newnotes.sh 
 
 
 
@@ -275,7 +275,3 @@ exec --no-startup-id "compton -b --config ~/pkg/compton.conf"
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /home/evi1haxor/pkg/i3-gaps/shscript/toggletouchpad.sh # toggle touchpad
-
-
-#Typora
-bindsym $mod+t exec typora /hdd/Documents/Notes/new.md
