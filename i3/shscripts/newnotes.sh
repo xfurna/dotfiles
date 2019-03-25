@@ -1,6 +1,11 @@
 # Script lets you open typora in your notes folder (required) with a [some number]newnote.md file opened by default for you to just jump in and get started right away.
 
 #!/bin/bash
+# Script lets you open typora in your notes folder (required) with a [some number]newnote.md file opened by default for you to just jump in and get started right away.
+
+
+
+
 IFS='
 '
 Notesdir="" # substitute this with your local Notes directory
