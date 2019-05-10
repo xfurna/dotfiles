@@ -277,5 +277,8 @@ exec --no-startup-id "compton -b --config ~/pkg/compton.conf"
 #calc
 bindsym $mod+p exec i3-sensible-terminal && "echo python" 
 
+#calculator_window
+for_window [class="Gnome-calculator"] floating enable
+
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /home/evi1haxor/pkg/i3-gaps/shscript/toggletouchpad.sh # toggle touchpad
