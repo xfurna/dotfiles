@@ -254,7 +254,7 @@ exec_always compton -f
 #typora
 
 bindsym $mod+n exec bash /home/evi1haxor/pkg/i3-gaps/shscript/newnotes.sh 
-
+for_window [class="Typora"] floating enable
 
 
 #wallpaper
@@ -279,6 +279,9 @@ bindsym $mod+p exec i3-sensible-terminal && "echo python"
 
 #calculator_window
 for_window [class="Gnome-calculator"] floating enable
+
+#To Do float
+for_window [class="Gnome-todo"] floating enable
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /home/evi1haxor/pkg/i3-gaps/shscript/toggletouchpad.sh # toggle touchpad
