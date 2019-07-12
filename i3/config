@@ -284,4 +284,4 @@ for_window [class="Gnome-calculator"] floating enable
 for_window [class="Gnome-todo"] floating enable
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec /home/evi1haxor/pkg/i3-gaps/shscript/toggletouchpad.sh # toggle touchpad
+exec_always xinput set-prop 12 309 1
