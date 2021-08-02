@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:Inconsolata 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -25,6 +25,29 @@ font pango:monospace 8
 # clear in small sizes. However, its unicode glyph coverage is limited, the old
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
+
+# Gaps
+# start a terminal
+for_window [class="^.*"] border pixel 0
+gaps inner 13
+gaps outer 13 
+gaps horizontal 55
+gaps vertical 55
+gaps top 5
+gaps right 5
+gaps bottom 5
+gaps left 5
+
+# resize gaps
+bindsym $mod+x gaps inner current plus 3
+bindsym $mod+Shift+x gaps inner current minus 3
+
+# No gaps for single window
+smart_gaps on
+# Remove Window title
+new_window none
+# Remove the borders for single window
+hide_edge_borders smart
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -174,30 +197,40 @@ set $text-color              #f3f4f5
 set $inactive-text-color     #676E7D    
 set $urgent-bg-color         #E53935    
 
-#window color          
-#                       #border                 #background         #text                #indicator
-client.focused          $bg-color               $bg-color           $text-color           #4530c9
-client.unfocused        $inactive-bg-color      $inactive-bg-color  $inactive-text-color  #00ff00
-client.focused_inactive $inactive-bg-color      $inactive-bg-color  $inactive-text-color  #00ff00
-client.urgent           $urgent-bg-color        $urgent-bg-color    $text-color           #00ff00   
-
-
-bar {
-#       status_command i3status
-	       status_command i3blocks
-       colors {
-                background $bg-color
-                separator #757575
-        #                    border              background            text
-                focused_workspace    $bg-color           $bg-color             $text-color
-                inactive_workspace   $inactive-bg-color  $inactive-bg-color    $inactive-bg-color
-                urgent_workspace     $urgent-bg-color    $urgent-bg-color      $text-color
+bar     {
+        status_command i3blocks
+        separator_symbol "|"
+        position bottom
+                colors  {               #Border #Backgr #Text   #Indicator
+                separator               #ff69b4
+                statusline              #fdfefe
+                background              #85929e
+                focused_background      #000000
+                focused_workspace       #ff69b4 #000000 #fdfefe
+#               active_workspace        #000000 #000000 #fdfefe
+                inactive_workspace      #000000 #000000 #fdfefe
+                urgent_workspace        #c0392b #000000 #fdfefe
+                        }
         }
+# ALternative to bar{}
+#exec "powerline-lemonbar --height 16 -- -b -f 'DejaVu Sans Mono-11' -f 'PowerlineSymbols-12' -f 'FontAwesome-11'"
 
-}
+
+#################
+# Border Colors #
+#################
+
+# Border colors         border  backgr. text    indicator child_border
+client.focused          #000000 #000000 #888888 #ff69b4   #000000
+client.focused_inactive #000000 #5f676a #ffffff #ff69b4   #000000
+client.unfocused        #000000 #222222 #888888 #ff69b4   #000000
+client.urgent           #ffffff #900000 #ffffff #ff69b4   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #000000
 
 #print screen
-bindsym $mod+Print exec scrot
+bindsym $mod+Print exec scrot '%Y-%m-%d_$wx-%H-%M-%S_scrot.png' 
+#-e 'mv $f /hdd/Pictures/screenshots/scrots/'
 
 
 #i3lock
@@ -205,8 +238,8 @@ bindsym $mod+Shift+z exec i3lock -c "#2f343f"
 
 
 #transparency of the terminal
-bindsym $mod+Shift+F7 exec sh /home/evi1haxor/pkg/i3-gaps/shscript/transparency.sh -
-bindsym $mod+Shift+F8 exec sh /home/evi1haxor/pkg/i3-gaps/shscript/transparency.sh +
+bindsym $mod+Shift+F7 exec bash /home/evi1haxor/pkg/i3-gaps/shscript/transparency.sh -
+bindsym $mod+Shift+F8 exec bash /home/evi1haxor/pkg/i3-gaps/shscript/transparency.sh +
 
 
 #brightness
@@ -219,7 +252,8 @@ bindsym $mod+F2 exec sh /home/evi1haxor/pkg/i3-gaps/shscript/brightness.sh -
 
 #keybindings
 bindsym $mod+Shift+t exec telegram-desktop
-bindsym $mod+Shift+w exec firefox
+#bindsym $mod+Shift+w exec firefox
+bindsym $mod+Shift+w exec google-chrome-stable
 bindsym $mod+Shift+n exec nautilus
 bindsym $mod+Shift+s exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
 bindsym $mod+c exec code
@@ -239,14 +273,16 @@ exec_always compton -f
 
 #typora
 bindsym $mod+n exec bash /home/evi1haxor/pkg/i3-gaps/shscript/newnotes.sh
-for_window [class="Typora"] floating enable
+bindsym $mod+z exec "typora /hdd/zettelkasten/"
+#for_window [class="Typora"] floating enable
 
 
 
 #wallpaper
 #exec_always bash /home/evi1haxor/pkg/i3-gaps/shscript/wallp.sh rndm
-exec_always bash /home/evi1haxor/pkg/i3-gaps/shscript/wallp.sh models
-#exec_always feh --bg-fill /hdd/Wallpapers/wpp.png
+#exec_always bash /home/evi1haxor/pkg/i3-gaps/shscript/wallp.sh models
+#exec_always bash /home/evi1haxor/pkg/i3-gaps/shscript/wallp.sh anime
+exec_always feh --bg-fill /hdd/Wallpapers/xf.png
 exec_always xinput set-prop 12 308 1
 #Volume control
 
