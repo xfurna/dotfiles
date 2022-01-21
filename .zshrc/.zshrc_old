@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
   export ZSH="/home/evi1haxor/.oh-my-zsh"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -64,8 +65,8 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   man
-  battery
   zsh_reload
+  battery
   chucknorris
   git-auto-fetch
 )
@@ -81,7 +82,7 @@ function mndl {
    for ((b=-1.5; b<=1.5; b+=3.0/lines)) do
        for ((a=-2.0; a<=1; a+=3.0/columns)) do
            for ((p=0.0, q=0.0, i=0; p*p+q*q < 4 && i < 32; i++)) do
-             i  ((pnew=p*p-q*q+a, q=2*p*q+b, p=pnew))
+               ((pnew=p*p-q*q+a, q=2*p*q+b, p=pnew))
            done
            ((colour=(i/4)%8))
             echo -n "\\e[4${colour}m "
@@ -110,7 +111,7 @@ insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
-#Alt+v = virtualenv
+#Alt+s = virtualenv
 
 virtual_env () {
 	zle beginning-of-line
@@ -124,29 +125,12 @@ function cdd {
 	cd && cd ../../hdd/
 }
 
-function tch {
-	xinput --disable $(xinput list | grep "ETPS/2 Elantech Touchpad" | cut -f2- -d'=' | cut -b 1,2)
-}
-
-
-function compcc {
-        cdd && cd ./projects/compe/cc/
-}
-
-function compcf {
-        cdd && cd ./projects/compe/cf/
-}
-
-function compspj {
-	cdd && cd ./projects/compe/spoj/
-}
-
-function comp {
-	cp /hdd/projects/compe/template.cpp template.cpp && touch input.txt output.txt error.txt && code .
-}
-
-function xf {
-	nmcli dev wifi connect 'IQOO Z5'
+function cdenv {
+	if [ "$#" = 0 ]; then
+		cd && cd ../../hdd/projects/virtual_env/
+	else
+		cd && cd ../../hdd/projects/virtual_env/$1
+	fi
 }
 
 # User configuration

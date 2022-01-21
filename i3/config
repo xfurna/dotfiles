@@ -251,7 +251,7 @@ bindsym $mod+F2 exec sh /home/evi1haxor/pkg/i3-gaps/shscript/brightness.sh -
 
 
 #keybindings
-bindsym $mod+Shift+t exec telegram-desktop
+bindsym $mod+Shift+t exec /home/evi1haxor/pkg/tsetup.3.2.4/Telegram/Telegram
 #bindsym $mod+Shift+w exec firefox
 bindsym $mod+Shift+w exec google-chrome-stable
 bindsym $mod+Shift+n exec nautilus
@@ -272,7 +272,7 @@ exec_always compton -f
 
 
 #typora
-bindsym $mod+n exec bash /home/evi1haxor/pkg/i3-gaps/shscript/newnotes.sh
+bindsym $mod+o exec bash /home/evi1haxor/pkg/i3-gaps/shscript/newnotes.sh
 bindsym $mod+z exec "typora /hdd/zettelkasten/"
 #for_window [class="Typora"] floating enable
 
@@ -284,6 +284,8 @@ bindsym $mod+z exec "typora /hdd/zettelkasten/"
 #exec_always bash /home/evi1haxor/pkg/i3-gaps/shscript/wallp.sh anime
 exec_always feh --bg-fill /hdd/Wallpapers/xf.png
 exec_always xinput set-prop 12 308 1
+exec_always conda deactivate
+
 #Volume control
 
 bindsym $mod+F8 exec pactl -- set-sink-volume 0 +5%
