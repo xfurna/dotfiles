@@ -81,11 +81,14 @@ source $ZSH/oh-my-zsh.sh
 alias cdd='cd && cd /hdd'
 alias tch="xinput --disable $(xinput list | grep "ETPS/2 Elantech Touchpad" | cut -f2- -d'=' | cut -b 1,2)"
 alias compcc="cdd && cd ./projects/compe/cc/"
-alias comcf="cdd && cd ./projects/compe/cf/"
+alias compcf="cdd && cd ./projects/compe/cf/"
 alias comp="cp /hdd/projects/compe/template.cpp template.cpp && touch input.txt output.txt error.txt && code ."
-alias xf="nmcli dev wifi connect 'IQOO Z5'"
+alias xf="nmcli dev wifi connect 'iQOO Z5'"
 alias ls='ls -GpF'
-
+alias gck='git checkout'
+alias ga='git add'
+alias gc='git commit -m'
+alias cpp='g++ template.cpp; ./a.out'
 
 # Inserts sudo in the beginning
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
@@ -119,3 +122,19 @@ bindkey "^[s" insert-sudo
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/home/xfurna/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/home/xfurna/anaconda3/etc/profile.d/conda.sh" ]; then
+#        . "/home/xfurna/anaconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/home/xfurna/anaconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+# <<< conda initialize <<<
+
